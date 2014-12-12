@@ -49,7 +49,8 @@ void editor::on_actionSave_triggered()
     if (!fileName.isEmpty()) {
         QFile file(fileName);
         if (!file.open(QIODevice::WriteOnly)) {
-
+	    // TODO: throw error at this line
+	    // do something and write error code
         } else {
             QTextStream stream(&file);
             stream << ui->textEdit->toPlainText();
